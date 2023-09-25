@@ -39,6 +39,8 @@ Esto significa que el remitente no puede negar haber enviado el archivo, ya que 
 
 ### ¿Para qué sirve ese segundo fichero? ¿Cómo se usa?
 
+Es el archivo que se usa para verificar que tanto el archivo como su destinatario es el que dice ser y que no se ha modificado ni subido por otra persona que no sea el remitente.
+
 ### Usa tus claves GPG para firmar un commit del repositorio GitHub en el que estás desarrollando tu sistema web para las entregas, de modo que aparezca como “Verified” en GitHub
 
 ## 4. Otras funcionalidades GPG
