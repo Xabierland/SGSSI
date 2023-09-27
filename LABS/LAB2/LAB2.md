@@ -43,6 +43,7 @@ Es el archivo que se usa para verificar que tanto el archivo como su destinatari
 
 ### Usa tus claves GPG para firmar un commit del repositorio GitHub en el que estás desarrollando tu sistema web para las entregas, de modo que aparezca como “Verified” en GitHub
 
+
 ## 4. Otras funcionalidades GPG
 
 ### ¿Cómo se exporta una clave GPG para poder usarla en otro equipo?
