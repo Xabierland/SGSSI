@@ -8,6 +8,10 @@ El ultimate no es mas que el nivel de confianza que tiene la clave en el sistema
 
 ### Cifrad este archivo PDF y enviároslo entre vosotros de forma que consigáis los principios de seguridad Confidencialidad, Integridad, Autenticidad y No Repudio. Razonad qué habéis tenido que hacer para conseguir cada uno de ellos
 
+```bash
+gpg --encrypt Cifrado-II.pdfgpg
+```
+
 1. Confidencialidad:
 La confidencialidad implica que solo las partes autorizadas puedan acceder al contenido del archivo. Para lograr la confidencialidad:
 Ambas partes deben tener sus propias claves GPG (pares de claves pública y privada) generadas.
@@ -54,7 +58,7 @@ gpg --list-keys
 gpg --armor --export 05F7D3156F6C75549C45EA61567737DF04245674
 ```
 
-```
+```text
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGUT44wBDAC+gYisIDnusc3g8vULmVqb9IaurozUqHIrKQHQaiE/HzlVWYdw
@@ -98,6 +102,15 @@ SVNW4UFfZ82oTanmLzbMuJOtACM/HGx8Hsnyjb4=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
+```bash
+gpg --edit-key 92B7ED6082748793F939DA95D8D4311231CFC203
+    trust
+    4
+    quit
+
+gpg --list-key
+```
+
 ## 3. Firmas GPG
 
 ### ¿Para qué sirve ese segundo fichero? ¿Cómo se usa?
@@ -106,6 +119,10 @@ Es el archivo que se usa para verificar que tanto el archivo como su destinatari
 
 ### Usa tus claves GPG para firmar un commit del repositorio GitHub en el que estás desarrollando tu sistema web para las entregas, de modo que aparezca como “Verified” en GitHub
 
+```bash
+# Importamos la clave publica a github
+git commit -a -S -m "Mensaje Verificado"
+```
 
 ## 4. Otras funcionalidades GPG
 
