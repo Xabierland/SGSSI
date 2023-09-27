@@ -9,7 +9,12 @@ El ultimate no es mas que el nivel de confianza que tiene la clave en el sistema
 ### Cifrad este archivo PDF y enviároslo entre vosotros de forma que consigáis los principios de seguridad Confidencialidad, Integridad, Autenticidad y No Repudio. Razonad qué habéis tenido que hacer para conseguir cada uno de ellos
 
 ```bash
-gpg --encrypt Cifrado-II.pdfgpg
+# Encripta el mensaje
+gpg --encrypt Cifrado-II.pdf #Si necesario redigir con > archivo
+
+# Deencriptar
+gpg --decrypt Cifrado-II.pdf.gpg > archivo.pdf
+
 ```
 
 1. Confidencialidad:
