@@ -1,4 +1,4 @@
-# Laboratorio 1 - Cifrado II
+# Laboratorio 2 - Cifrado II
 
 ## 1. Asegurando las comunicaciones mediante GPG
 
