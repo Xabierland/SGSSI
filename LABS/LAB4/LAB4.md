@@ -8,7 +8,7 @@ sudo apt install apache2
 
 ## 2.- Creacion de un sitio seguro
 
-## 2.1.- Instalacion de certbot (Let’s Encrypt)
+## 2.1.- Certificado con certbot (Let’s Encrypt)
 
 ```bash
 # 0. Configuramos servidor Apache
@@ -41,7 +41,7 @@ sudo nano /etc/apache2/sites-available/default-ssl.conf
     + SSLCertificateFile      /etc/ssl/certs/apache-selfsigned.crt
     + SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 sudo nano /etc/apache2/sites-available/000-default.conf
-    + Redirect "/" "https://34.105.232.127/"
+    + Redirect permanent "/" "https://34.105.232.127/"
 
 # 3. Aplicar cambios en Apache
 sudo a2enmod ssl
