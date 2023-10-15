@@ -168,23 +168,73 @@ Firmas digitales
 
 ## 5.- Cifrado simetrico
 
-```text
+### 5.1.- Clave privada
 
+```text
+Cifrado de flujo: Cifra un bit a la vez
+Cifrado en bloque: dividir el mensaje en bloques.
+Objetivos:
+    Convertir el mensaje en ininteligible
+    Recuperar la informacion cifrada
+    Implementacion sencilla
+Tecnicas:
+    Transposicion: Cambiar el orden de los caracteres
+    Sustitucion: Cambiar los caracteres por otros
 ```
 
 ## 6.- Cifrado asimetrico
+
+### 6.1.- Clave Publica
+
+```text
+Dos claves por usuario
+    Clave publica
+    Clave privada
+Relacionadas matematicamente
+Lo que cifra una lo descifra la otra
+Solo el destinatario puede leer el mensaje
+Solo hay que almacenar una clave
+Cualquiera puede usar la clave publica para enviar mensajes
+No son necesarios canales seguros
+La clave privada no se puede compartir
+Es practicamente imposible deducir la clave privada a partir de la publica
+Debe ser facil obtener la clave publica
+Solo se debe cifrar con la publica ya que si cifras con la privada todo el mundo podra descifrarlo
+Si alguien intercepta he intercambia las claves publicas puede leer los mensajes
+    Usar canales seguros
+    Usar un AC para validar las claves publicas
+```
+
+### 6.2.- Cifrado hibrido
+
+```text
+Mas rapidos que los de clave publica
+Se crea una clave secreta que se usa para encriptar el mensaje y posteriormente se encripta la clave secreta con la clave publica y se envian ambas al destinatario
+```
 
 ## 7.- Firma digital
 
 ### 7.1.- Introduccion
 
 ```text
-
+Solo quien tiene la clave privada puede firmar un documento
+No se puede falsificar
+Cualquiera puede verificar una firma digital
+No se pueden reutilizar las firmas
+No se pueden modificar
+No se pueden negar haber firmado
+No se puede alterar un documento despues de firmarlo
+Ademas de firmarlo se puede encriptar un mensaje.
+    Criptografia asimetrica
+    Criptografia hibrida
 ```
 
 ### 7.2.- Confianza de firmas
 
 ```text
+Se usa PGP, GPG y similares
+Un usuario certifica que la clave publica de otro usuario es de confianza
+La confianza se propaga segun la confianza que demos a los usuarios
 ```
 
 ### 7.3.- Niveles de confianza
