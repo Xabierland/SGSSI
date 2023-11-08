@@ -66,4 +66,4 @@ netstat -ntlp | grep "LISTEN"
 
 ### ¿Cómo impedirías el tráfico entrante en el puerto 8890 desde tu IP actual? (Pista: What is my IP?)
 
-> 
+> Se podria crear una regla de firewall en [GCC](https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/) y añadirla a la instancia
