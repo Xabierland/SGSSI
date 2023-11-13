@@ -377,50 +377,373 @@ Usos:
 
 ### 10.1.- Introduccion
 
-```text
-Criptomoneda que usa cifrado asimetricos y algoritmos resumen
-Usado tanto como libro de contabilidad como de moneda
-```
+* Criptomoneda que usa cifrado asimetricos y algoritmos resumen
+* Usado tanto como libro de contabilidad como de moneda
 
 ### 10.2.- ¿Que es Bitcoin?
 
-```text
-Una red de pagos descentralizada.
-Usa el protocolo Bitcoin
-La moneda es bitcoin
-```
+* Una red de pagos descentralizada.
+* Usa el protocolo Bitcoin
+* La moneda es bitcoin
+
 
 ### 10.3.- ¿La red Bitcoin?
 
-```text
 Libro de cuentas donde se escriben todos los pagos he impide su modificacion
 Una copia del libro en cada nodo con las transacciones
 Para escribir en el libro hace falta pasar una prueba de trabajo llamada mineria la cual por fuerza bruta resuelve un problema criptografico y recibe el bitcoin como pago por el trabajo y comision por las transacciones con maximo de 21 millones de bitcoins
 Esta prueba se basa en hayar un hash el cual tiene que ser menor a un numero antes puesto que verifique todo el contenido del bloque. Esto se consigue alteranto un dato que va en todo los bloques de transacciones llanado nonce lo que hace que el hash cambie.
-```
 
 ### 10.5.- Soluciones que aporta
 
-```text
-Todo el mundo tiene acceso a una cuenta
-    Descentralizado
-Desaparece la falta de privacidad
-Da igual el pais
-    Sin fronteras
-Elimina la inflacion
-    Suministro limitado
-```
+* Todo el mundo tiene acceso a una cuenta
+  * Descentralizado
+* Desaparece la falta de privacidad
+* Da igual el pais
+  * Sin fronteras
+* Elimina la inflacion
+  * Suministro limitado
 
 ### 10.6.- Usos acutales
 
-```text
-Ahorro
-Tranferencias internacionales
-    Evitar pagos pequeños
-    Pagos rapidos
-Compras
-Especulacion financiera
-    Posibles perdidas
-Certificados de propiedad
-Certificados de existencia
-```
+* Ahorro
+* Tranferencias internacionales
+  * Evitar pagos pequeños
+  * Pagos rapidos
+* Compras
+* Especulacion financiera
+  * Posibles perdidas
+* Certificados de propiedad
+* Certificados de existencia
+
+## 11.- Seguridad en Sistemas Web
+
+### 11.1.- Pentesting
+
+Intentar penetrar en un sistema utilizando las mismas herramientas que un atacante para descubrir vulnerabilidades y arreglarlas.
+
+### 11.2.- Principales vulnerabilidades
+
+* Rotura de control de acceso
+* Fallos criptograficos
+* Inyeccion
+* Diseño inseguro
+* Configuracion de seguridad insuficiente
+* Componenetes vulnerables y obsoletos
+* Fallos de identificacion y autenticacion
+* Fallos en la integridad de datos y software
+* Fallos en la monitorizacion de la seguridad
+
+### 11.3.- Rotura de control de acceso
+
+#### 11.3.1.- Desripcion
+
+Obligar al usuario a actuar solo dentro de unos limintes establecidos
+
+#### 11.3.2.- Ejemplos
+
+* Violar el priniipio de menor privilegio
+* Acceso a recursos no autorizados
+* Acceso a recursos de otros usuarios
+* Escalada de privilegios
+
+#### 11.3.3.- Prevencion
+
+* Denegar por defecto resursos
+* Controlar el acceso a los recursos
+* Controlar el acceso a los datos
+* Registrar los accesos
+* Limitar el numero de intentos
+
+### 11.4.- Fallos criptograficos
+
+#### 11.4.1.- Descripcion
+
+Exponer datos por no usar metodos criptograficos adecuados.
+
+#### 11.4.2.- Ejemplos
+
+* Almacenar datos en texto plano
+* No usar canales seguros
+* Usar algoritmos debiles
+* Usar claves debiles
+* Usar claves por defecto
+* No gestionar las claves
+  * Generacion
+    * Evitar algoritmos debiles
+  * Distribucion
+    * Usar conexiones seguras
+  * Uso
+    * Solo las usan las personas autorizadas
+  * Almacenamiento
+    * Servicios en la nuve
+    * HSM
+  * Destruccion
+    * Cuando una clave caduca se crea otra y se destruye la anterior encriptando los datos con la nueva clave.
+* Certificados no validos
+* Usar contraseñas en vez de claves
+* Semillas no suficientemente aleatorias
+
+#### 11.4.3.- Prevencion
+
+* Gestionar las claves
+  * No escribir las claves en el codigo
+  * Principio de menor privilegio
+  * Usar HSM
+  * Automatizar la gestion de claves
+  * Dividir el trabajo en varias personas
+  * Dividir las claves en varias partes
+* Clasificar los datos segun la sensibilidad
+* Almacenar la menor cantidad de datos posible
+* Cifrar todos los datos.
+* Usar algoritmos criptograficos actuales
+* Cifrar la transmision de datos
+* No permitir el usao de cache
+* Almacenar la contraseñas seguramente
+* Usar semilals con mucha entropia
+
+### 11.5.- Inyeccion
+
+#### 11.5.1.- Descripcion
+
+Introducir codigo en un sistema para que se ejecute.
+
+#### 11.5.2.- Ejemplos
+
+* Los datos no se validas, filtran o limpian
+* No se parametrizan las consultas
+
+#### 11.5.3.- Prevencion
+
+* Revisar el codigo
+* Usar testeos automatizados
+* Usar herramientas de despliegue continuo
+* Usar APIs seguras.
+* Validar inputs
+* Limitar consultas
+
+### 11.6.- Diseño inseguro
+
+#### 11.6.1.- Descripcion
+
+Fallos en el diseño, antes del codigo
+
+### 11.7.- Configuracion de seguridad insuficiente
+
+#### 11.7.1.- Descripcion
+
+Las configuraciones por defecto no son seguras
+
+#### 11.7.2.- Ejemplos
+
+* Permisos inadecuados
+* Funcionalidades no desactivadas
+* Cuentas por defecto
+* Errores demasiado informativos
+* Sistemas desactualizados
+* Frameworks desactualizados o mal configurados
+* Cabeceras HTTP mal configuradas
+
+#### 11.7.3.- Prevencion
+
+* Desarrollo automatizados y despliegue continuo
+* Sistema minimalista
+
+### 11.8.- Componenetes vulnerables y obsoletos
+
+#### 11.8.1.- Descripcion
+
+Usar componentes que tienen vulnerabilidades conocidas
+
+#### 11.8.2.- Ejemplos
+
+* No se conocen las versiones que usamos
+* El software no tiene soporte, es vulnerable y obsoleto
+
+#### 11.8.3.- Prevencion
+
+* Quitar dependeciar innecesarias
+* Inventario actualizado de componenetes de manera automatizada
+* Solo componentes de confianza
+
+### 11.9.- Fallos de identificacion y autenticacion
+
+#### 11.9.1.- Descripcion
+
+No se implementa bien la identificacion, autenticacion y gestion de sesion.
+
+#### 11.9.2.- Ejemplos
+
+* Permite ataques de fuerza bruta
+* Contraseñas debiles
+* Mecanismo de recuperacion de contraseña debil
+* Almacenar contraseña en texto plano
+* No usa autenticacion multifactor
+* Exponer datos en la URL
+* No invalidar la sesion
+
+#### 11.9.3.- Prevencion
+
+* Autenticacion multifactor
+* No hacer despliegeus con credenciales por defecto
+* Implementar validaciones "ligeras"
+* Tener una buena politica de contraseñas
+* Limitar los intentso de login
+
+### 11.10.- Fallos en la integridad de datos y software
+
+#### 11.10.1.- Descripcion
+
+No se comprueba la integridad de los datos y software
+
+#### 11.10.2.- Ejemplos
+
+* Auto-Actualizacion sin test de integridad
+
+#### 11.10.3.- Prevencion
+
+* Usar firmas digitales para verificar el software
+* Gestores de librerias
+* Controles de integridad adecaudos en IC/DC
+* No se envian datos a clientes sin firmar
+
+### 11.11.- Fallos en la monitorizacion de la seguridad
+
+#### 11.11.1.- Descripcion
+
+No se monitoriza la seguridad
+
+#### 11.11.2.- Ejemplos
+
+* No se guardan eventos auditables
+* Los errores no se guardan correctamente
+* No se monitorea todo el sistema
+* Sin copia de seguridad
+* No hay respuestas automaticas a ataques
+* No se usan herramientas de pentesting
+* No se detectan amenazas a tiempo real
+
+#### 11.11.3.- Prevencion
+
+* Asgurar fallos de login, control de acceso, validaciones, etc
+* Asegurar correcta generacion de logs
+* Usar controles de integridad
+* Establecer e implementar planes de respuesta a incidentes
+
+
+## 12.- Seguridad Fisica
+
+### 12.1.- Introduccion
+
+* Proteger los activos fisicos
+* Aplicar barreas fisicas y procedimientos de seguridad
+
+Ejemplo: Camara acorazada en la CIA o centro de datos de google
+
+* Debe ser coherente con el valor
+* Medidas equilibradas
+* Se deben aplicar a los servicios que ofrece la empresa
+
+### 12.2.- Estandares
+
+#### ISO
+
+* ISO 27002 - Como gestionar la seguridad de un sistema
+* ISO 27003 - Como diseñar un SGSI
+* ISO 27004 - Como medir la eficacia de un SGSI
+* ISO 27005 - Como gestionar los riesgos de un SGSI
+
+#### AENOR
+
+### 12.3.- SGSI
+
+* Planificar
+  * Analisis de riesgos
+    * Identificar amenazas
+    * Valorar perdidas
+    * Estimar costes
+  * Plan de contingencia
+    * Tecnicas
+      * Extintores
+      * Detectores de humo
+      * Salidas de emergencias
+      * Equipos respaldo
+    * Organizativas
+      * Incendios
+      * Alquiler de equipos
+      * Backups
+      * Procedimientos de actuacion
+    * Humanas
+      * Formacion
+      * Responsables
+      * Roles
+    * Respaldo
+      * Que hacer antes de que ocurra
+      * Prevencir la amenaza
+        * Simulacros
+        * Copias de seguridad
+    * Emergencia
+      * Que hacer mientras ocurre
+      * Paliar los efectos de la amenaza
+        * Activar precontratos de alquiler
+        * Restaurar backups
+    * Recuperacion
+      * Que hacer despues de que ocurra
+      * Restaurar al estado antes de la amenaza
+        * Trasladar datos de emergencia
+        * Desactivar precontratos de alquiler
+        * Reclamar seguros
+* Hacer
+  * Implementar las contramedidas oportunas
+    * Atenuar riegos
+    * Minimizar perdidas
+    * Asegurar rapidez
+* Comprobar
+  * Revisar periodicamente
+    * Puesta al dia
+    * Comprovar funcionamiendo de SGSI
+* Actuar
+  * Resultado de la comprobacion
+    * Revisar aspectos menores
+    * Mejorar la eficiencia
+
+### 12.4.- Amenazas
+
+#### 12.4.1.- Humanas
+
+* Establecer areas seguras
+* Electromagnetismo
+* Captar señales de componentes
+* Instalaciones valladas y con control de acceso
+* Control de acceso a las instalaciones
+* Sistemas biometricos
+* Visitar supervisadas
+* Accesos auditados
+
+#### 12.4.2.- Naturales
+
+* Terremotos, Fuego, Tormentas electricas, inundaciones, etc
+
+#### 12.4.3.- Entorno
+
+* Temperaturas
+* Polvo
+* Insectos
+* Sistemas de refrigeracion
+* Limpieza
+* Camaraz acorazadas
+* Filtros en los conductos
+
+#### 12.4.4.- Informacion en soporte fisico
+
+* No se deben meter dispositivos que extraigan informacion
+
+## 13.- Copias de seguridad
+
+### 13.1.- Introduccion
+
+
+
+## 14.- Seguridad en redes
+
+## 16.- Malware
