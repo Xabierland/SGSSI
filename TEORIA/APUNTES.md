@@ -1034,14 +1034,23 @@ Muestra anuncios
 
 Minar criptomonedas
 
-### 16.10.- Instalacion
+### 16.10.- Fases
+
+* Llegada al sistema
+* Instalacion
+* Activacion
+* Ocultamiento
+* Reproduccion
+* Manifestacion
+
+### 16.11.- Instalacion
 
 * Añadidura - Se añade en el EOF
 * Insercion - Se inserta en un programa
 * Reorientacion - Se cambia el flujo de ejecucion
 * Sustitucion - Se sustituye un programa por otro
 
-### 16.11.- Ocultacion
+### 16.12.- Ocultacion
 
 * Dispersion
 * Compresion
@@ -1051,4 +1060,44 @@ Minar criptomonedas
 * Polimorfismo
 * Blindaje
 
-### 
+### 16.13.- Tecnicas antivirus
+
+* Deteccion por cadena o firma - Cadenas concretas
+  * La mas usada
+  * Permite identificar el malware
+  * No detecta nuevos virus
+  * Requiere actualizacion continua
+  * Si esta encriptado no se puede encontrar
+* Por localizacion - Archivos concretos
+  * Si existe un fichero detecta infeccion
+  * No detecta nuevos viruses
+  * Requiere actualizacion continua
+* Heuristicos - Comprueba instrucciones o comportamientos
+  * No necesita actualizacion continua
+  * Capaz de detectar malware nuevo
+  * Mas propenso a falsos positivos
+  * Mal rendimiento
+  * No detecta nuevas caracteristicas de malware
+* Comportamiento - Comprueba acciones
+  * No necesita actualizacion continua
+  * Capaz de detectar malware nuevo
+  * Mas propenso a falsos positivos
+  * Mal rendimiento
+  * No detecta nuevas caracteristicas de malware
+* Chequeo de integridad
+  * Checksums, hash
+  * Archivo limpio
+  * Spoofing
+* Control de acceso
+  * Solo aplicaciones autorizadas
+  * Dificil de administrar
+
+Limitaciones:
+
+* Faciles de burlar
+* Soluciones a posteriori
+* Falsa sensacion de seguridad
+* Protocolos no analizables
+* Limitaciones en el perimetro
+* Formatos no analizables
+* El malware evoluciona
