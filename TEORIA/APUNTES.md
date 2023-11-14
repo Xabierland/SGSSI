@@ -742,8 +742,313 @@ Ejemplo: Camara acorazada en la CIA o centro de datos de google
 
 ### 13.1.- Introduccion
 
+* Se pierde mucho dinero en perdida de datos
+* Se tarda mucho en detectar perdidas de datos
+* Causas:
+  * Errores de usuarios o administradores 29%
+  * Errores de software
+  * Errores de hardware 31%
+  * Ataques o robo 29%
+  * Desastres naturales
 
+### 13.2.- Definiciones
+
+* Backup: Duplicado de la informacion
+* Recuperar informacion
+* Tener un historico
+* Auditorias
+* Informatica forense
+
+### 13.3.- Normativa
+
+* ISO 27002
+  * 12.3: Information Backup
+  * Que copiar
+  * DOnde copiar
+  * Cada cuanto
+  * Como recuperar
+  * Igual que el UNE 71501
+
+### 13.4.- Planificacion de las copias
+
+* Minimo 3 copias
+  * 2 en local y 1 offline
+  * 1 en remoto
+* Sincronizar archivos no vale
+* Copias incrementales
+* Encriptar
+* Crear plan de prevencion
+* Crear plan de recuperacion
+* Elegir que copiar
+  * Velocidad de copia
+  * Prioridades
+  * Datos mas valiosos
+  * Tomar en cuenta costes
+
+### 13.5.- Tipos de copias
+
+#### 13.5.1.- Dia cero
+
+* Copiar todo antes de empezar a usar el sistema
+* Punto de partida
+
+#### 13.5.2.- Completa
+
+* Se realiza una copia de todos los datos
+* Informacion duplicada
+* Adecuada cuando hay muchos cambios desde la anterior
+* Lenta y ocupa mucho
+
+#### 13.5.3.- Incremental
+
+* Se copian los datos cambiados respecto la ultima vez
+* Rapida y ocupa poco
+* Optima
+
+#### 13.5.4.- Diferencial
+
+* Se copian los datos cambiados respecto la ultima copia completa
+* Rapida y ocupa poco
+* Algo mas lenta que la incremental
+
+### 13.6.- Restauracion de copias
+
+* Dia cero: restaurar la copia
+* Completa: restaurar la copia
+* Incremental: restaurar la copia completa y luego la incremental
+* Diferencial: restaurar la copia completa y luego la diferencial
+
+### 13.7.- Frecuencia de copias
+
+* Depende:
+  * Valor de la informacion
+  * Coste de no tener informacion
+  * Cantidad de informacion
+  * Cantidad de cambios
+  * Coste de realizar la copia
+
+### 13.8.- Proteccion de copias
+
+* Las copias tambien sufren ataques
+* Plan de proteccion:
+  * Acceso
+  * Disponibilidad
+  * Proteccion
+  * Tiempo de vida
+
+### 13.9.- Comprobacion de copias
+
+* Comprobar que las copias se hacen correctamente
+* Hacer pruebas de restauracion
 
 ## 14.- Seguridad en redes
 
+### 14.1.- Conexion a internet
+
+* Confidencial e integridad
+* Sistemas de autenticacion
+* Control de accesos
+* Supervisar el trafico
+* Garantizar la disponibilidad
+* Controlar los accesos
+* Evitar los intentos de intrusion
+
+### 14.2.- Defensa Perimetral
+
+* Crear una barrera entre la red interna y la externa
+* Filtrar el trafico
+* Controlar las conexiones
+* Normas mas laxas en la red interna
+
+### 14.3.- Proxy
+
+* Servidor intermediario
+* El proxy se comunica con el exterior
+* Mayor seguridad durante navegacion
+* Aisla al usuario del mundo exterior
+* NAT para convertir IPs
+* Filtrar las comunicaciones
+* Crear caches para acelerar la navegacion
+* Auditar el ancho de banda
+* Antivirus perimetral
+
+### 14.4.- Proxy inverso
+
+* Acceso controlado desde el exterior al servidor.
+* alanceo de carga
+
+### 14.5.- Firewall
+
+* Elemento de red que filtra paquetes
+* Establece conexiones directas
+* Bloque trafico no autorizado
+* Oculta los equipos internos
+* Oculta informacion de la red
+* Registra todo el trafico
+* Redirecciona el trafico
+* Limita el ancho de banda
+* Da estadisticas sobre el ancho de banda
+* Monitorea ataques 
+
+### 14.6.- DMZ
+
+* Zona donde estan los servicios
+* Se crea entre uno o dos cortafuegos que limitan el acceso
+* No se puede acceder a internet directamente
+
+### 14.7.- ACL
+
+* Reglas de filtrado
+
+### 14.8.- Firewall
+
+* Tipos:
+  * A nivel de paquetes - Paquetes
+  * Dinamicos - Paquetes y Flags
+  * Pasarela - Reglas
+* Lista blanca: Se deniega todo menos lo aceptado
+* Lista negra: Se acepta todo menos lo denegado
+* Bloquear paquetes por Broadcast
+* Bloquear paquetes por Spoofing
+* Bloquear paquetes con direcciones privadas
+* Bloquear fuente HOME
+* Bloquear paquetes ICMP
+* BLoquear ICMP Redirect
+* Bloquear paquetes con TTL 0
+* Bloquear puertos
+  * Telnet
+  * SSH
+  * FTP
+  * NetBIOS
+  * RPC
+  * NFS
+  * HTTP, SSL, SMTP, POP, IMAP, DNS, LDAP
+* Ataques de ingenieria social
+* Ataques por USL
+* Ataques nivel protocolo
+* Virus en portatiles del exterior
+
+### 14.9.- Logs
+
+* IP cliente
+* ID cliente
+* Nombre usuario
+* Fechas y horas conexion
+* Peticiones
+* Estados
+* Bytes enviados
+
+### 14.10.- IPS
+
+* Detectar y reaccionar de forma automatica
+* Comprolar comportamiento red
+* Comprobar comportamiento BBDD
+* Eventos basados en BBDD
+* Alarmas e informes
+* Respuestas pasivas
+  * Registrar intrusiones
+* Respuestas activas
+  * Bloquear intrusiones
+
+### 14.11.- HIDS
+
+* Detectar y avisar
+* Comprobar comportamiento red
+* Analizar logs kernel
+* Analizar logs aplicaciones
+* Auditoria periodicas
+* Revisiones detalladas
+
+### 14.12.- NIDS
+
+* Monitorizar trafico
+* Enrutamiento anormales
+* IP spoofing
+* DNS spoffing
+* SYN flooding
+* Fala correspondencia Mac-IP
+
+### 14.13.- Honeypost
+
+* Señuelos
+* Detectar ataques
+* Atraer atacantes
+* Avisar de ataques
+* Recoger informacion
+* Avisar de vulnerabilidades
+
+### 14.14.- VPN
+
+* Red privada virtual
+* Conectar en red no segura
+* Autenticacion
+* Integridad
+* Confidencialidad
+* No repudio
+
+### 14.15.- Ataques
+
+* Sniffing
+* MITM
+* Hijacking
+* Spoofing
+* DoS DDos
+
 ## 16.- Malware
+
+### 16.1.- Definiciones
+
+* Programa que provoca daño
+* Virus, gusanos, troyanos, spyware, adware, etc
+* No siempre tienen unos diferenciadores claros
+
+### 16.2.- Gusanos
+
+* Se reproduce a si mismo
+
+### 16.3.- Troyanos
+
+* Se mantiene oculto en un sistema para lleva a cabo una funcion
+
+### 16.4.- Bomba logica
+
+* Se activa cuando se cumple una condicion
+
+### 16.5.- Backdoors
+
+* Puerta trasera, permite acceso y control remoto
+
+### 16.6.- Spyware
+
+Recolecta y envia informacion privada
+
+### 16.7.- Keylogger
+
+Captura las teclas pulsadas
+
+### 16.8.- Adware
+
+Muestra anuncios
+
+### 16.9.- Coinminer
+
+Minar criptomonedas
+
+### 16.10.- Instalacion
+
+* Añadidura - Se añade en el EOF
+* Insercion - Se inserta en un programa
+* Reorientacion - Se cambia el flujo de ejecucion
+* Sustitucion - Se sustituye un programa por otro
+
+### 16.11.- Ocultacion
+
+* Dispersion
+* Compresion
+* Camuflaje
+* Sobrepasamiento
+* Autocifrado
+* Polimorfismo
+* Blindaje
+
+### 
