@@ -15,7 +15,4 @@
 
 ```bash
 # Instalar vsftpd
-sudo apt update && sudo apt install vsftpd
-sudo nano /etc/vsftpd.conf
-
 ```
