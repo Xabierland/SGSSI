@@ -1,5 +1,8 @@
 # Laboratorio 10 - NMap
 
+> [!PREREQUISITES]
+> Es necesario tener instalado nmap para poder realizar este laboratorio. Para instalarlo en Ubuntu se puede usar el comando `sudo apt install nmap`.
+
 ## Puertos abiertos en scanme.nmap.org y en tu servidor Google Cloud, servicios y version de servicios
 
 ```bash
@@ -45,7 +48,7 @@ Nmap done: 1 IP address (1 host up) scanned in 4.75 seconds
 ## ¿Que maquionas estan activas en la red desde tu maquina a tu servidor remoto?
 
 > [!NOTE]
-> Para esto se puede usando la flag `--traceroute` que hace un traceroute a la maquina, y muestra los hops que hace el paquete para llegar a la maquina.
+> Para esto se puede usando la flag `--traceroute` que hace un traceroute a la maquina, y muestra los hops que hace el paquete para llegar a la maquina. Tambien existe un programa de mismo nombre que la flag que hace lo mismo.
 
 ```bash
 sudo nmap --traceroute $IP
@@ -79,12 +82,24 @@ Nmap done: 1 IP address (1 host up) scanned in 11.41 seconds
 
 ## ¿Que puertos tiene abiertos una de las maquinas activas de la red?
 
+```bash
+nmap $IP
+```
+
+
 ## ¿Que versiones de los servicios está usando una de las máquinas activas de la red?
+
+> [!NOTE]
+> Para esto se puede usar el flag `-sV` que hace un scan de versiones de los servicios. [NMap Service and Version Detection](https://nmap.org/man/es/man-version-detection.html)
+
+```bash
+sudo nmap -sV $IP
+```
 
 ## ¿Que sistema operativo está usando una de las máquinas activas de la red?
 
 > [!NOTE]
-> Para esto se puede usar el flag `-O` o `-A` que hace un scan de OS. Este scan es un poco mas lento que los otros, ya que se envian paquetes con flags especificos para cada sistema operativo, y se analiza la respuesta. Si el sistema operativo es Linux, se envia un paquete con el flag SYN, si el sistema operativo es Windows, se envia un paquete con el flag ACK, y si el sistema operativo es Mac, se envia un paquete con el flag FIN. Si se recibe un RST, el puerto esta cerrado, si se recibe un SYN/ACK, el puerto esta abierto, y si no se recibe nada, el puerto esta filtrado.
+> Para esto se puede usar el flag `-O` o `-A` que hace un scan de OS. [NMap OS Detection](https://nmap.org/man/es/man-os-detection.html)
 
 ```bash
 sudo nmap -O $IP
@@ -122,7 +137,7 @@ El sistema operativo es GNU/Linux y la version del kernel es 5.0
 
 ## Una vez determinado el sistema operativo, ¿que vulnerabilidades tiene?
 
-Tras buscar en [https://cve.mitre.org/](https://cve.mitre.org/) Linux 5.0 se pueden ver 27 CVEs o vulnerabilidades que afectan a esta version del kernel.
+Tras buscar en [https://cve.mitre.org/](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=Linux+5.0) Linux 5.0 se pueden ver 27 CVEs que afectan a esta version del kernel.
 
 ## ¿Como se puede usar nmap para detectar si una maquina tiene firewall?
 
