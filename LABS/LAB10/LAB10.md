@@ -1,6 +1,6 @@
 # Laboratorio 10 - NMap
 
-> [!PREREQUISITES]
+> [!INFO]
 > Es necesario tener instalado nmap para poder realizar este laboratorio. Para instalarlo en Ubuntu se puede usar el comando `sudo apt install nmap`.
 
 ## Puertos abiertos en scanme.nmap.org y en tu servidor Google Cloud, servicios y version de servicios
