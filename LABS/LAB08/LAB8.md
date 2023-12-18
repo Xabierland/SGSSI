@@ -2,24 +2,7 @@
 
 ## IPTables CheatSheet
 
-```bash
-# Basicos
-## Listar reglas
-iptables -L -v
-
-## Añadir regla
-iptables -A <nombre> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
-
-## Añadir regla en una posicion especifica
-iptables -I <nombre> <posicion> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
-
-## Eliminar regla
-iptables -F <nombre>
-
-## Eliminar regla en una posicion especifica
-iptables -D <nombre> <posicion>
-
-```
+[IPTables CheatSheet](https://www.acens.com/comunicacion/wp-content/images/2014/07/wp-acens-iptables.pdf)
 
 ## Copia de seguridad de las reglas de iptables
 
