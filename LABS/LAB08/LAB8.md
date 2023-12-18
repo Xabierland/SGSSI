@@ -28,7 +28,7 @@ sudo iptables-save > iptables.backup
 
 ### Que vuestro servidor GCP solo acepte conexiones SSH desde el servidor 35.190.223.37 y desde vuestra máquina local
 
-> [!WARNING]
+> [!CAUTION]
 > Si te equivocas en estos comandos puedes perder el acceso a tu servidor
 
 ```bash
@@ -38,11 +38,8 @@ sudo iptables -A INPUT -p tcp --dport 22 -s 35.190.223.37 -j ACCEPT
 
 ### Instalad un servicio FTP en vuestro servidor Google Cloud y que solo acepte conexiones FTP desde máquinas de la red de ehu.eus
 
-> [!CAUTION]
+> [!WARNING]
 > Recuerda abrir el puerto 20 y 21 para que funcione FTP correctamente.
-
-> [!Note]
-> Al no estar en la universidad en vez de ehu.eus usare mi IP.
 
 ```bash
 # Instalar y configurar vsftpd
@@ -69,6 +66,9 @@ ftp $IP
 # Añadir reglas
 sudo iptables  -A INPUT -p tcp --dport 21 -s $IP -j ACCEPT
 ```
+
+> [!Note]
+> Al no estar en la universidad en vez de ehu.eus usare mi IP.
 
 ### Que vuestro servidor Google Cloud no acepte conexiones HTTP (Solo HTTPS)
 
