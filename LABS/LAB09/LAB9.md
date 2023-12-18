@@ -18,28 +18,35 @@
 
 ## Instalar TOR
 
+> [https://community.torproject.org/es/onion-services/setup/](https://community.torproject.org/es/onion-services/setup/)
+
 ```bash
+# Añadir repositorio
 echo "deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/tor.list
 
 echo "deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/tor.list
 
+# Añadir clave de repositorio
 wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
 
+# Instalar
 sudo apt update
-
 sudo apt install tor deb.torproject.org-keyring
 
+# Comprobar que funciona
 curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip
 ```
 
 ## Configurar servicio ONION
 
 ```bash
+# Crear directorio
 echo "HiddenServiceDir /var/lib/tor/my-website/" | sudo tee -a /etc/tor/torrc
-
 echo "HiddenServicePort 80 127.0.0.1:80" | sudo tee -a /etc/tor/torrc
 
+# Reiniciar servicio
 sudo service tor restart
 
+# Obtener direccion ONION
 sudo cat /var/lib/tor/my-website/hostname
 ```
