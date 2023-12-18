@@ -11,11 +11,14 @@ iptables -L -v
 iptables -A <in/out> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
 
 ## Eliminar reglas
-iptables -D <
+iptables -D <in/out> <posicion>
 
 # Avanzados
 ## Añadir reglas en una posicion especifica
 iptables -I <in/out> <posicion> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
+
+## Eliminar todas las reglas de un tipo
+iptables -F <in/out>
 ```
 
 ## Copia de seguridad de las reglas de iptables
