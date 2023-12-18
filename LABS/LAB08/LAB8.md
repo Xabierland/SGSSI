@@ -71,7 +71,7 @@ sudo iptables  -A INPUT -p tcp --dport 21 -s $IP -j ACCEPT
 ```
 
 > [!Note]
-> Al no estar en la universidad en vez de ehu.eus usare mi IP.
+> Al no estar en la universidad en vez de ehu.eus he usado mi IP.
 
 ### Que vuestro servidor Google Cloud no acepte conexiones HTTP (Solo HTTPS)
 
