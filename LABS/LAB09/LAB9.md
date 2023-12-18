@@ -35,9 +35,9 @@ curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip
 ## Configurar servicio ONION
 
 ```bash
-echo "HiddenServiceDir /var/lib/tor/my-website/" >> sudo tee -a /etc/tor/torrc
+echo "HiddenServiceDir /var/lib/tor/my-website/" | sudo tee -a /etc/tor/torrc
 
-echo "HiddenServicePort 80 127.0.0.1:80" >> sudo tee -a /etc/tor/torrc
+echo "HiddenServicePort 80 127.0.0.1:80" | sudo tee -a /etc/tor/torrc
 
 sudo service tor restart
 

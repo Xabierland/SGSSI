@@ -142,4 +142,38 @@ Tras buscar en [https://cve.mitre.org/](https://cve.mitre.org/cgi-bin/cvekey.cgi
 ## ¿Como se puede usar nmap para detectar si una maquina tiene firewall?
 
 > [!WARNING]
-> No hay ninguna herramienta mágica (u opción de Nmap) que permita detectar y evitar cortafuegos y sistemas IDS. Se puede usar la opcion `-f` para fragmentar los paquetes, y `-D` para usar decoys pero no hay ninguna opcion que permita detectar y evitar cortafuegos y sistemas IDS.
+> No hay ninguna herramienta mágica (u opción de Nmap) que permita detectar y evitar cortafuegos y sistemas IDS. Se puede usar la opcion `-f` para fragmentar los paquetes, y `-D` para usar decoys pero no hay ninguna opcion que permita detectar y evitar cortafuegos y sistemas IDS. Tambien se pueden usar ataques basados en SYN o ACK para intentar evadir
+
+```bash
+# SYN
+nmap -sS scanme.nmap.org
+```
+
+```text
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-12-13 10:36 CET
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.17s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 874 closed ports, 122 filtered ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+9929/tcp  open  nping-echo
+31337/tcp open  Elite
+```
+
+```bash
+# ACK
+sudo nmap -sA scanme.nmap.org
+```
+
+```text
+sudo nmap -sA scanme.nmap.org
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-12-13 10:37 CET
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.17s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+All 1000 scanned ports on scanme.nmap.org (45.33.32.156) are filtered
+```
+
+De esta forma podemos ver que al hacer un scan ACK no existen resultados mientras que haciendo un scan SYN si que existen resultados, por lo que podemos deducir que existe un firewall o de lo contrario estariamos recibiendo paquetes RST.
