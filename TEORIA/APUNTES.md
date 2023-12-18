@@ -630,7 +630,6 @@ No se monitoriza la seguridad
 * Usar controles de integridad
 * Establecer e implementar planes de respuesta a incidentes
 
-
 ## 12.- Seguridad Fisica
 
 ### 12.1.- Introduccion
@@ -994,6 +993,8 @@ Ejemplo: Camara acorazada en la CIA o centro de datos de google
 * Spoofing
 * DoS DDos
 
+## 15.- El factor humano
+
 ## 16.- Malware
 
 ### 16.1.- Definiciones
@@ -1101,3 +1102,15 @@ Limitaciones:
 * Limitaciones en el perimetro
 * Formatos no analizables
 * El malware evoluciona
+
+## 17.- Informatica forense
+
+## 18.- Deep Web
+
+## 19.- Aspectos legales
+
+## 20.- Seguridad en IA
+
+## 21.- Seguridad en sistemas embebidos
+
+## 22.- Seguridad en IoT
