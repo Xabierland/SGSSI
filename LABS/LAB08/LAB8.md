@@ -7,18 +7,18 @@
 ## Listar reglas
 iptables -L -v
 
-## Añadir reglas
-iptables -A <in/out> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
+## Añadir regla
+iptables -A <nombre> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
 
-## Eliminar reglas
-iptables -D <in/out> <posicion>
+## Añadir regla en una posicion especifica
+iptables -I <nombre> <posicion> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
 
-# Avanzados
-## Añadir reglas en una posicion especifica
-iptables -I <in/out> <posicion> -p <protocolo> --dport <puerto> -s <IP> -j <accion>
+## Eliminar regla
+iptables -F <nombre>
 
-## Eliminar todas las reglas de un tipo
-iptables -F <in/out>
+## Eliminar regla en una posicion especifica
+iptables -D <nombre> <posicion>
+
 ```
 
 ## Copia de seguridad de las reglas de iptables
