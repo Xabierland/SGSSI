@@ -995,6 +995,40 @@ Ejemplo: Camara acorazada en la CIA o centro de datos de google
 
 ## 15.- El factor humano
 
+### 15.1.- Introduccion
+
+* Un sistema de seguridad es tan efectivo como el mas debil de sus eslabones
+* El usuario es el eslabon mas debil
+* Hay que tenerlo en cuenta al diseñas politicas de seguridad
+* Miedo a represalias
+  * Robo de informacion
+  * Sabotaje
+  * Dificil de detectar
+  * Necesario auditorias
+* Necesario evaluar riesgos
+* Necesario evaluar exposicion a riesgos
+* Necesario preparar respuesta
+* Limitar acceso a datos
+  * Medidas extras para datos importantes
+* Como se aprovechan los piratas
+  * Desconocimiento/Ignorancia
+    * Falta de formacion
+  * Dejadez/Pereza
+    * Mala gestion de claves
+  * Curiosidad
+    * Clickbait
+    * Phishing
+  * Ganas de darse a conocer
+    * Dar informacion de mas
+  * Miedo
+  * Verguenza
+    * Desprestigio
+* Todo esto se explota medainte ingenieria social
+
+### 15.2.- Ingenieria social
+
+* Se trata de obtener informacion confidencial
+
 ## 16.- Malware
 
 ### 16.1.- Definiciones
@@ -1105,9 +1139,166 @@ Limitaciones:
 
 ## 17.- Informatica forense
 
+### 17.1.- Introduccion
+
+* Disciplina que investiga sistemas informaticos para obtener informacion
+* Tiene validez juridica
+* Trata de dar respuestas
+* Se utiliza por
+  * Agentes de la ley
+  * Aseguradoras
+  * Empresas
+  * Particulares
+* Consiste en
+  * Extraer informacion
+  * Recuperar informacion
+  * Monitorizar comportamientos
+  * Detectar anomalias
+* Principios
+  * Locard
+    * Cuando dos objetos entran en contacto se intercambian materiales
+  * Heisenberg
+    * No se puede observar un sistema sin alterarlo
+* La validez de la informacion la decide el juez
+* Todo puede ser manipulado
+* Para que algo tenga validez debe
+  * Respetar la ley al obtener la informacion
+  * No alterar la informacion
+  * El analisis debe ser reproducible
+
+### 17.2.- Proceso
+
+1. Indentificacion
+  * Identificar los sistemas
+  * Aconsejable notario
+  * Tomar fotos
+  * Cadena de custodia
+  * Importante informacion de RAM
+    * pd Proccess Dumper
+    * Volatility
+    * FTK Imager
+    * EnCase
+2. Preservacion/Conservacion
+  * Evitar perdidas
+  * Evitar contaminacion
+  * Evitar daños, alteracion, manipulacion
+  * Documentar todo
+  * Etiquetar todo
+  * Indicar marcas, modelos, numeros...
+  * Datos de manipulador
+  * Guardar origen
+  * Tener copias de seguridad
+  * Entregar copias no originales
+3. Analisis
+  * Recuperar elementos borrados
+  * Analizar logs
+  * Crackear contraseñas
+  * Importante manejar fechas
+  * Repetar LOPD
+    * Busqueda ciega
+4. Exposicion/Presentacion
+  * Realizar informes
+  * No tecnico
+  * Imparcial
+  * Partes
+    * Antecedentes
+      * Situacion
+    * Evidencias
+      * Evidencias y procesos seguidos
+    * Analisis y tratamiento
+      * Tecnicas y herramientas usadas
+    * Resultados
+      * Resultados de las tecnicas
+    * Conclusiones
+      * Deducciones
+
 ## 18.- Deep Web
 
+### 18.1.- Introduccion
+
+* Contenido no indexado por los buscadores
+* Informacion confidencial o protegida
+  * Bases de datos
+  * Foros
+  * Informacion suelta
+  * Formatos no legibles
+  * Contenido censurado
+  * Contenido ilegal
+    * Traficos
+    * CP
+    * Malware
+    * Hacking
+    * Snuff
+  * Niveles
+    * 1 - Accesible por buscadores
+    * 2 - Sitios privados o con acceso restringido
+    * 3 - Necesario software especifico
+    * 4 - Necesario software especifico y conocimiento
+    * 5 - Gubernamental
+  * Programas
+    * Tor
+    * I2P
+    * Freenet
+    * ZeroNet
+    * GNUnet
+
+### 18.2.- Tor
+
+* Tor Browser
+  * Navegador que usa Tor
+* Tails
+  * Sistema operativo que corre en RAM y usa Tor
+* Cada vez que se accede a un sitio se crea un circuito de nodos aleatorios
+* La informacion se cifra en cada nodo y se va descifrando como si fuera una cebolla
+* Se puede acceder a sitios .onion
+
 ## 19.- Aspectos legales
+
+### 19.1.- Union Europea
+
+* Convenido sobre ciberdelincuencia de la Union Europea 2001
+  * Delitos relaciones con el contenido
+    * CP
+    * Amenazas
+    * Calumnias
+      * Decir que alguien ha cometido un delito
+    * Difusion de contenidos racistas
+  * Delitos relacionados con las infracciones de derechos de autor
+    * Propiedad intelectual
+    * Pirateria
+  * Delitos relacionados con la informatica
+    * Falsificar informacion que produzca alteracion borrado o supresion de datos informaticos
+      * Fraudes
+      * Estafas
+      * Trafico de contraseñas
+      * ...
+  * Delitos contra la confidencialidad, integridad y disponibilidad de datos y sistemas informaticos
+    * Acceso ilegal a sistemas informaticos
+    * Intercepar comunicaciones
+    * Interferir en datos
+    * Distribuir virus
+
+## 19.2.- España
+
+* Ley organiza 10/1995
+  * Delitos contra la intimidad y el secreto de las comunicaciones
+  * Estafas electronicas
+  * Infraccion de los derechos de propiedad intelectual
+  * Delitos de daños
+  * Utilizacion de ordenadores y de terminal de telecomunicaciones sin consentimiento de su titular
+  * Descubrimiento y revelacion de secretos contenidos en documentos o soportes informaticos
+  * Falsedad en documentos electronicos
+  * Fabricacion o tenencia de utiles para la comision de delitos
+  * Distribucion entre menores de edad de material pornografico
+  * Distribucion de CP
+  * Publicacion de calumnias e injurias
+
+## 19.3.- Proteccion de datos personales
+
+* Derecho a la intimidad y privacidad
+* Ley organica 15/1999 LOPD
+  * 
+* Declaracion de derechos humanos 1948
 
 ## 20.- Seguridad en IA
 
