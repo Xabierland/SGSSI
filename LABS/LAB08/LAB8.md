@@ -20,6 +20,7 @@ sudo iptables-save > iptables.backup
 ```bash
 sudo iptables -A INPUT -p tcp --dport 22 -s $IP -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 22 -s 35.190.223.37 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
 ```
 
 ### Instalad un servicio FTP en vuestro servidor Google Cloud y que solo acepte conexiones FTP desde máquinas de la red de ehu.eus
@@ -51,6 +52,8 @@ ftp $IP
 ```bash
 # Añadir reglas
 sudo iptables  -A INPUT -p tcp --dport 21 -s $IP -j ACCEPT
+sudo iptables  -A INPUT -p tcp --dport 21 -s ehu.eus -j ACCEPT
+sudo iptables  -A INPUT -p tcp --dport 21 -j DROP
 ```
 
 > [!Note]
